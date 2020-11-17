@@ -1,2 +1,4 @@
 .idea
 sql_app.db
+__pycache__/
+*/__pycache__/
