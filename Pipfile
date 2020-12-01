@@ -8,7 +8,8 @@ fastapi = "*"
 uvicorn = "*"
 pydantic = "*"
 starlette = "*"
-sqlalchemy = "*"
+boto3="*"
+requests="*"
 
 [dev-packages]
 
