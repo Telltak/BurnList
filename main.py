@@ -10,15 +10,14 @@ from ddb import schemas, crud, NotFoundException
 
 import utils
 
-API_KEY = "G777L3zdZ8"
+# Set your own API_KEY
+API_KEY = ""
 API_KEY_NAME = "access_token"
 COOKIE_DOMAIN = "localtest.me"
 
 api_key_query = APIKeyQuery(name=API_KEY_NAME, auto_error=False)
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 api_key_cookie = APIKeyCookie(name=API_KEY_NAME, auto_error=False)
-
-app = FastAPI()
 
 
 # TODO make this real auth
@@ -44,7 +43,7 @@ except NotFoundException:
     utils.create_systems()
 
 
-# TODO set up auth middlewear
+app = FastAPI(dependencies=[Depends(get_api_key)])
 
 
 @app.get('/structures/{structure_id}', response_model=schemas.Structure)

@@ -17,6 +17,7 @@ def _parse_query(query: dict):
         return namedtuple('query', d.keys())(*d.values())
 
 
+# TODO improve this to do connections properly
 class BotoTable:
     def __init__(self, connection: resource = None, ddb_table: table = None):
         if not connection:
