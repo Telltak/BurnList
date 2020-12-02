@@ -11,6 +11,7 @@ from ddb import schemas, crud, NotFoundException
 import utils
 
 # Set your own API_KEY
+# TODO add support for keys/oauth within DDB
 API_KEY = ""
 API_KEY_NAME = "access_token"
 COOKIE_DOMAIN = "localtest.me"
